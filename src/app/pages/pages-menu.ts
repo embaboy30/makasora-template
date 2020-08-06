@@ -4,12 +4,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Dashboard',
     icon: 'clipboard-outline',
-    link: '/pages/dashboard',
+    link: '/admin/dashboard',
     home: true,
   },
   {
     title: 'Articles',
     icon: 'book-open-outline',
-    link: '/pages/articles',
+    link: '/admin/articles',
   },
 ];
