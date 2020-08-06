@@ -3,12 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'pages',
+    path: 'admin',
     loadChildren: () => import('./pages/pages.module')
       .then(m => m.PagesModule),
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  {
+    path: 'blog',
+    loadChildren: () => import('./view-only/view-only.module')
+      .then(m => m.ViewOnlyModule),
+  },
+  { path: '', redirectTo: 'blog', pathMatch: 'full' },
+  { path: '**', redirectTo: 'blog' },
 ];
 
 @NgModule({

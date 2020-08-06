@@ -1,3 +1,4 @@
+import { ViewOnlyModule } from './view-only/view-only.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -6,14 +7,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbSidebarService, NbSidebarModule, NbMenuModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { PagesComponent } from './pages/pages.component';
 import { PagesModule } from './pages/pages.module';
+import { ViewOnlyComponent } from './view-only/view-only.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewOnlyComponent
   ],
   imports: [
+    ViewOnlyModule,
     PagesModule,
     BrowserModule,
     AppRoutingModule,
