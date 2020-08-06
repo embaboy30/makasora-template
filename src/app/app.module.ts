@@ -8,12 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbSidebarService, NbSidebarModule, NbMenuModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { PagesModule } from './pages/pages.module';
-import { ViewOnlyComponent } from './view-only/view-only.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ViewOnlyComponent
   ],
   imports: [
     ViewOnlyModule,
