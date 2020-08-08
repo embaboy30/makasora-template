@@ -25,6 +25,6 @@ import { ArticlesComponent } from './articles/articles.component';
     NbSidebarModule,
     NbButtonModule,
     NbMenuModule,
-  ]
+  ],
 })
 export class PagesModule { }

@@ -20,6 +20,9 @@
             "allowedCommonJsDependencies": [
               "lodash",
               "firebase",
+              "angularfire2",
+              "angularfire2/auth",
+              "angularfire2/database",
               "@angular/common/locales/fr",
               "lodash/dropRight",
               "@firebase/app",

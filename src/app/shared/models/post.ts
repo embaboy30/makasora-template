@@ -1,8 +1,11 @@
 export class Post {
-    id: string;
     title: string;
     body: string;
     timeStamp: string;
     active: boolean;
-  }
+}
+export class Article {
+  key: string;
+  value: Post;
+}
   

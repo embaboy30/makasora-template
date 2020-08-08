@@ -9,19 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private postService: PostService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  create() {
-    const data: Post = {
-      id: '1',
-      title: 'asd',
-      body: 'asdasd',
-      timeStamp: new Date().toString(),
-      active: true,
-    }
-    this.postService.createItem(data);
   }
 }

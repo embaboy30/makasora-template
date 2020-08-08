@@ -29,10 +29,16 @@ import {
   NbRouteTabsetModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { PostFormDialogComponent } from './dialogs/post-form-dialog/post-form-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [PostFormDialogComponent, ConfirmDialogComponent],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
+
     NbRouteTabsetModule,
     NbFormFieldModule,
     NbCardModule,
@@ -93,5 +99,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 
     CommonModule,
   ],
+  entryComponents: [
+    PostFormDialogComponent,
+   ],
 })
 export class NebularImportsModule { }

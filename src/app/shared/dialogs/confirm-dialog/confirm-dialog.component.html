@@ -1,0 +1,10 @@
+<nb-card class="card">
+    <nb-card-header>Delete Confirmation</nb-card-header>
+    <nb-card-body>
+        <p>Are you sure you want to delete these item?</p>
+    </nb-card-body>
+    <nb-card-footer class="d-flex justify-content-end">
+        <button nbButton (click)="dialogRef.close(true);" class="mr-2" status="danger">Confirm</button>
+        <button nbButton (click)="dialogRef.close(false);">close</button>
+    </nb-card-footer>
+</nb-card>
