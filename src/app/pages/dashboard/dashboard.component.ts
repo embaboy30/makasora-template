@@ -1,3 +1,5 @@
+import { PostService } from './../../shared/services/post.service';
+import { Post } from './../../shared/models/post';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
   }
 
+  create() {
+    const data: Post = {
+      id: '1',
+      title: 'asd',
+      body: 'asdasd',
+      timeStamp: new Date().toString(),
+      active: true,
+    }
+    this.postService.createItem(data);
+  }
 }

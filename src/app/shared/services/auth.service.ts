@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
 
 @Injectable({
@@ -12,9 +12,9 @@ export class AuthService {
   ) { }
 
   login() {
-    this.angularFireAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.angularFireAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
   logout() {
-    this.angularFireAuth.signOut();
+    this.angularFireAuth.auth.signOut();
   }
 }
