@@ -1,3 +1,4 @@
+import { AuthService } from './../shared/services/auth.service';
 import { MENU_ITEMS } from './pages-menu';
 import { Component, OnInit } from '@angular/core';
 @Component({
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pages.component.scss']
 })
 export class PagesComponent implements OnInit {
-
+  showlogin;
   menu = MENU_ITEMS;
-  constructor() { }
+  constructor(
+    public authService: AuthService,
+  ) { }
 
   ngOnInit(): void {
   }

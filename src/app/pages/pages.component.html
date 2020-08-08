@@ -1,5 +1,13 @@
 <nb-layout>
-  <nb-layout-header fixed>Company Name</nb-layout-header>
+  <nb-layout-header fixed>
+    <div *ngIf="authService.angularFireAuth.authState | async as user; else showlogin">
+      {{user.displayName}}
+      <button nbButton (click)="authService.logout()" class="ml-auto" status="primary">logout</button>
+    </div>
+    <ng-template #showlogin>
+      <button nbButton (click)="authService.login()" class="ml-auto" status="primary">login</button>
+    </ng-template>
+  </nb-layout-header>
 
   <nb-sidebar>
     <nb-menu [items]="menu"></nb-menu>

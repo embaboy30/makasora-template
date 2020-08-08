@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { ViewOnlyModule } from './view-only/view-only.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,13 +10,15 @@ import { NbThemeModule, NbLayoutModule, NbSidebarService, NbSidebarModule, NbMen
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { PagesModule } from './pages/pages.module';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    ViewOnlyModule,
-    PagesModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -24,7 +27,13 @@ import { PagesModule } from './pages/pages.module';
     NbThemeModule.forRoot({ name: 'default' }),
     NbThemeModule.forRoot(),
     NbLayoutModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+
+    //firebase
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule // storage
   ],
   providers: [NbSidebarService],
   bootstrap: [AppComponent]
