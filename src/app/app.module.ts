@@ -1,21 +1,25 @@
-import { ViewOnlyModule } from './view-only/view-only.module';
+import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarService, NbSidebarModule, NbMenuModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarService, NbSidebarModule, NbMenuModule, NbDialogModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { PagesModule } from './pages/pages.module';
 
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { NebularImportsModule } from './shared/nebular-imports.module';
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    ViewOnlyModule,
-    PagesModule,
+    NebularImportsModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -23,10 +27,16 @@ import { PagesModule } from './pages/pages.module';
     NbMenuModule.forRoot(),
     NbThemeModule.forRoot({ name: 'default' }),
     NbThemeModule.forRoot(),
+    NbDialogModule.forRoot(),
     NbLayoutModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+
+    //firebase
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   providers: [NbSidebarService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

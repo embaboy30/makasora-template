@@ -1,0 +1,13 @@
+<nb-card class="card">
+    <nb-card-header>Post Form</nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="form">
+            <input type="text" class="mb-2" nbInput fullWidth status="basic" formControlName="title" placeholder="Title">
+            <input type="text" class="mb-2" nbInput fullWidth status="basic" formControlName="body" placeholder="Body">
+        </form>
+    </nb-card-body>
+    <nb-card-footer class="d-flex justify-content-end">
+        <button nbButton (click)="onSubmit()" class="mr-2" status="primary">Submit</button>
+        <button nbButton (click)="close()">close</button>
+    </nb-card-footer>
+</nb-card>

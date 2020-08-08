@@ -13,7 +13,6 @@ const routes: Routes = [
       .then(m => m.ViewOnlyModule),
   },
   { path: '', redirectTo: 'blog', pathMatch: 'full' },
-  { path: '**', redirectTo: 'blog' },
 ];
 
 @NgModule({

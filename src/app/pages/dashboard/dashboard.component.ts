@@ -1,3 +1,5 @@
+import { PostService } from './../../shared/services/post.service';
+import { Post } from './../../shared/models/post';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,5 +13,4 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

@@ -17,6 +17,25 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "firebase",
+              "angularfire2",
+              "angularfire2/auth",
+              "angularfire2/database",
+              "@angular/common/locales/fr",
+              "lodash/dropRight",
+              "@firebase/app",
+              "firebase/app",
+              "@firebase/util",
+              "@firebase/component",
+              "@firebase/auth",
+              "@firebase/database",
+              "@firebase/firestore",
+              "@firebase/functions",
+              "@firebase/performance",
+              "@firebase/remote-config"
+           ],
             "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
