@@ -38,11 +38,11 @@ export class PostService {
   }
   updateArticle(article: Article): void {
     this.posts.update(article.key, article.value)
-      .catch(error => this.handleError(error))
+      .catch(error => this.handleError(error));
   }
   deleteArticle(key: string): void {
       this.posts.remove(key)
-        .catch(error => this.handleError(error))
+        .catch(error => this.handleError(error));
   }
 
   handleError(error) {

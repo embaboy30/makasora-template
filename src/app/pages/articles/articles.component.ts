@@ -45,7 +45,7 @@ export class ArticlesComponent implements OnInit {
             timeStamp: new Date().toString(),
             active: true,
             image: imageUrl,
-          }
+          };
           this.postService.createArticle(data);
           this.getArticles();
         }else {
@@ -63,13 +63,8 @@ export class ArticlesComponent implements OnInit {
     return new Promise(resolve => {
       const task = this.storage.upload(filePath, file);
       const ref = this.storage.ref(filePath);
-      
+
       this.uploadPercent = task.percentageChanges();
-      
-      task.snapshotChanges().subscribe(res => {
-        console.log(res);
-        
-      });
       task.snapshotChanges().pipe(
         finalize(() => {
           this.downloadURL = ref.getDownloadURL()
