@@ -1,3 +1,4 @@
+import { ViewArticleComponent } from './view-article/view-article.component';
 import { ArticleDashboardComponent } from './article-dashboard/article-dashboard.component';
 import { ViewOnlyComponent } from './view-only.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: ArticleDashboardComponent,
+      },
+      {
+        path: 'article/:key',
+        component: ViewArticleComponent,
       },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],

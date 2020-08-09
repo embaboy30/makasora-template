@@ -29,7 +29,7 @@ export class ArticlesComponent implements OnInit {
     this.getArticles();
   }
   getArticles(){
-    this.postService.getItemsList().subscribe(res => {
+    this.postService.getArticleList().subscribe(res => {
       this.articles = res ? res : [];
     });
   }
@@ -46,13 +46,13 @@ export class ArticlesComponent implements OnInit {
             active: true,
             image: imageUrl,
           }
-          this.postService.createItem(data);
+          this.postService.createArticle(data);
           this.getArticles();
         }else {
           article.value.body = res.body;
           article.value.title = res.title;
           article.value.image = imageUrl;
-          this.postService.updateItem(article);
+          this.postService.updateArticle(article);
         }
       }
       this.postService.selectedArticle = null;
@@ -82,7 +82,7 @@ export class ArticlesComponent implements OnInit {
   onDelete(article: Article = null) {
     const dialogRef = this.dialogService.open(ConfirmDialogComponent).onClose.subscribe(res => {
       if (res) {
-        this.postService.deleteItem(article.key);
+        this.postService.deleteArticle(article.key);
         this.getArticles();
       }
     });

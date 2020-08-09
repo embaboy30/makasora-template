@@ -7,12 +7,14 @@ import { ArticleDashboardComponent } from './article-dashboard/article-dashboard
 import { NebularImportsModule } from '../shared/nebular-imports/nebular-imports.module';
 import { RouterModule } from '@angular/router';
 import { NbLayoutModule, NbSidebarModule, NbButtonModule, NbMenuModule } from '@nebular/theme';
+import { ViewArticleComponent } from './view-article/view-article.component';
 
 
 @NgModule({
   declarations: [
     ViewOnlyComponent,
     ArticleDashboardComponent,
+    ViewArticleComponent,
   ],
   imports: [
     NebularImportsModule,
