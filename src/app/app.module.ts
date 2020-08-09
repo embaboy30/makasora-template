@@ -12,12 +12,20 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { NebularImportsModule } from './shared/nebular-imports.module';
+import { NebularImportsModule } from './shared/nebular-imports/nebular-imports.module';
+import { PostFormDialogComponent } from './shared/dialogs/post-form-dialog/post-form-dialog.component';
+import { ConfirmDialogComponent } from './shared/dialogs/confirm-dialog/confirm-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 @NgModule({
   declarations: [
     AppComponent,
+    PostFormDialogComponent, 
+    ConfirmDialogComponent,
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     NebularImportsModule,
     HttpClientModule,
     BrowserModule,
@@ -34,6 +42,7 @@ import { NebularImportsModule } from './shared/nebular-imports.module';
     //firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFireStorageModule,
     AngularFireAuthModule,
   ],
   providers: [NbSidebarService],

@@ -2,7 +2,7 @@ import { Post, Article } from './../models/post';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angularfire2/database';
-import { asapScheduler, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

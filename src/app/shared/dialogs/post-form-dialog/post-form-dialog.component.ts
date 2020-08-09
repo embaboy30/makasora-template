@@ -1,9 +1,7 @@
 import { PostService } from 'src/app/shared/services/post.service';
-import { Article } from './../../models/post';
 import { Component, OnInit, Input } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
 @Component({
   selector: 'app-post-form-dialog',
   templateUrl: './post-form-dialog.component.html',
@@ -11,6 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class PostFormDialogComponent implements OnInit {
   form: FormGroup;
+  file;
   constructor(
     private dialogRef: NbDialogRef<PostFormDialogComponent>,
     private formBuilder: FormBuilder,
@@ -24,13 +23,15 @@ export class PostFormDialogComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  uploadImage(event) {
+    this.file = event.target.files[0];
+  }
   close() {
     this.dialogRef.close();
   }
   onSubmit() {
     if (this.form.valid) {
-      this.dialogRef.close(this.form.value);
+      this.dialogRef.close({...this.form.value, file: this.file});
     }
   }
 }

@@ -8,7 +8,6 @@
             <thead>
                 <tr>
                     <th scope="col">Title</th>
-                    <th scope="col">Body</th>
                     <th scope="col">Active</th>
                     <th scope="col">Published</th>
                     <th scope="col" style="width: 100px;" class="text-center">Actions</th>
@@ -17,8 +16,7 @@
             <tbody>
                 <tr *ngFor="let item of articles">
                     <td>{{item.value.title}}</td>
-                    <td>{{item.value.body}}</td>
-                    <td>{{item.value.active}}</td>
+                    <td>{{item.value.active ? 'Active' : 'Inactive'}}</td>
                     <td>{{item.value.timeStamp | date: 'medium'}}</td>
                     <td>
                         <div class="d-flex justify-content-center">

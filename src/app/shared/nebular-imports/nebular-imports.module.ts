@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   NbUserModule,
@@ -29,16 +29,10 @@ import {
   NbRouteTabsetModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { PostFormDialogComponent } from './dialogs/post-form-dialog/post-form-dialog.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
-  declarations: [PostFormDialogComponent, ConfirmDialogComponent],
+  declarations: [],
   imports: [
-    FormsModule,
-    ReactiveFormsModule,
-
     NbRouteTabsetModule,
     NbFormFieldModule,
     NbCardModule,
@@ -99,8 +93,5 @@ import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.
 
     CommonModule,
   ],
-  entryComponents: [
-    PostFormDialogComponent,
-   ],
 })
 export class NebularImportsModule { }

@@ -2,8 +2,14 @@
     <nb-card-header>Post Form</nb-card-header>
     <nb-card-body>
         <form [formGroup]="form">
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="uploadImage($event)">
+                  <label class="custom-file-label" for="inputGroupFile01">{{ this.file ? this.file.name : 'Choose file' }}</label>
+                </div>
+              </div>
             <input type="text" class="mb-2" nbInput fullWidth status="basic" formControlName="title" placeholder="Title">
-            <input type="text" class="mb-2" nbInput fullWidth status="basic" formControlName="body" placeholder="Body">
+            <textarea nbInput fullWidth class="mb-2"  status="basic" placeholder="Body" formControlName="body"></textarea>
         </form>
     </nb-card-body>
     <nb-card-footer class="d-flex justify-content-end">

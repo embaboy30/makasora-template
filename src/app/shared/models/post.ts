@@ -3,6 +3,7 @@ export class Post {
     body: string;
     timeStamp: string;
     active: boolean;
+    image: string;
 }
 export class Article {
   key: string;
