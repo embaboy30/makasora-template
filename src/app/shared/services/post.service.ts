@@ -14,10 +14,12 @@ export class PostService {
   posts: AngularFireList<Post> = null; //  list of objects
   post: AngularFireObject<Post> = null; //   single object
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private angularFireDatabase: AngularFireDatabase) {
+    this.posts = this.angularFireDatabase.list(this.postBasePath);
+   }
 
   getArticleList(): Observable<Article[]> {
-    this.posts = this.db.list(this.postBasePath);
+    this.posts = this.angularFireDatabase.list(this.postBasePath);
     return this.posts.snapshotChanges().pipe(map(x => {
       var data: Article[] = x.map(res => {
         return { key: res.key , value: res.payload.val()} as Article;
@@ -28,7 +30,7 @@ export class PostService {
 
   getArticle(key: string): Observable<Article>{
     const itemPath =  `${this.postBasePath}/${key}`;
-    this.post = this.db.object(itemPath)
+    this.post = this.angularFireDatabase.object(itemPath)
     return this.post.snapshotChanges().pipe(map(x => {
       return { key: x.key , value: x.payload.val()} as Article;;
     }));
