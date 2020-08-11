@@ -13,13 +13,7 @@ export class PagesComponent implements OnInit {
   userMenu = [ { title: 'Profile' }, { title: 'Settings' }, { title: 'Log out' } ];
   constructor(
     public authService: AuthService,
-    private menuService: NbMenuService,
   ) {
-    this.menuService.onItemClick().subscribe((res) => {
-      if (res.item.title === 'Log out') {
-        this.authService.logout();
-      }
-    });
   }
 
   ngOnInit(): void {

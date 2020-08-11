@@ -1,27 +1,4 @@
-<nb-layout>
-  <nb-layout-header fixed>
-    <div class="header-container">
-      <!-- <img src="" height="60px" /> -->
-      <h2>Icon</h2>
-      <div *ngIf="authService.angularFireAuth.authState | async as user; else showlogin" class="ml-auto">
-        <nb-actions size="small">
-          <nb-action class="user-action">
-            <nb-user [nbContextMenu]="userMenu" [name]="user.displayName" [picture]="user.photoURL">
-            </nb-user>
-          </nb-action>
-        </nb-actions>
-      </div>
-    </div>
-    <ng-template #showlogin>
-      <button nbButton (click)="authService.login()" class="ml-auto" status="primary">login</button>
-    </ng-template>
-  </nb-layout-header>
-
-  <nb-sidebar>
-    <nb-menu [items]="menu"></nb-menu>
-  </nb-sidebar>
-
-  <nb-layout-column>
-    <router-outlet></router-outlet>
-  </nb-layout-column>
-</nb-layout>
+<ngx-one-column-layout>
+  <nb-menu [items]="menu"></nb-menu>
+  <router-outlet></router-outlet>
+</ngx-one-column-layout>

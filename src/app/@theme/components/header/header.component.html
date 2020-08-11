@@ -1,0 +1,19 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#" (click)="navigateHome()">Makasora PH</a>
+  </div>
+</div>
+<div *ngIf="authService.angularFireAuth.authState | async as user; else showlogin" class="ml-auto">
+  <nb-actions size="small">
+    <nb-action class="user-action">
+      <nb-user [nbContextMenu]="userMenu" [onlyPicture]="userPictureOnly" [name]="user.displayName" [picture]="user.photoURL">
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+</div>
+<ng-template #showlogin>
+  <button nbButton (click)="authService.login()" class="ml-auto" status="primary">login</button>
+</ng-template>

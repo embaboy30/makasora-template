@@ -17,6 +17,7 @@ import { PostFormDialogComponent } from './shared/dialogs/post-form-dialog/post-
 import { ConfirmDialogComponent } from './shared/dialogs/confirm-dialog/confirm-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { ThemeModule } from './@theme/theme.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     NbDialogModule.forRoot(),
     NbLayoutModule,
     NbEvaIconsModule,
+    ThemeModule.forRoot(),
 
     //firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),

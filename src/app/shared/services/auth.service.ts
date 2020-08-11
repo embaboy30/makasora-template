@@ -42,7 +42,7 @@ export class AuthService {
   private updateUserData(user) {
     this.user$.subscribe(res =>  {
       if (res) {
-        this.Users.update(res.key, res.payload.val())
+        this.Users.update(res.uid, res)
       .catch(error => console.log(error));
       }else {
         const data: User = { 
