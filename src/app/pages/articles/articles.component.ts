@@ -39,8 +39,8 @@ export class ArticlesComponent implements OnInit {
     this.postService.selectedArticle = article;
     const dialogRef = this.dialogService.open(PostFormDialogComponent).onClose.subscribe(async res => {
       if (res) {
-        const imageUrl = await this.uploadImage(res.file, 'images/' + this.datePipe.transform(new Date(), 'MMddyyyyHHmm'));
         if (!article) {
+          const imageUrl = await this.uploadImage(res.file, 'images/' + this.datePipe.transform(new Date(), 'MMddyyyyHHmm'));
           const data: Post = {
             title: res.title,
             body: res.body,
@@ -51,9 +51,13 @@ export class ArticlesComponent implements OnInit {
           this.postService.createArticle(data);
           this.getArticles();
         }else {
+          let imageUrl;
+          if (res.file) {
+            imageUrl = await this.uploadImage(res.file, 'images/' + this.datePipe.transform(new Date(), 'MMddyyyyHHmm'));
+          }
           article.value.body = res.body;
           article.value.title = res.title;
-          article.value.image = imageUrl;
+          article.value.image = res.file ? imageUrl : article.value.image;
           this.postService.updateArticle(article);
         }
       }
