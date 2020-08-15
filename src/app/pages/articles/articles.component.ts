@@ -8,6 +8,7 @@ import { PostService } from 'src/app/shared/services/post.service';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { finalize } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-articles',
@@ -21,6 +22,7 @@ export class ArticlesComponent implements OnInit {
   constructor(
     private dialogService: NbDialogService,
     private postService: PostService,
+    private router: Router,
     private storage: AngularFireStorage,
     private datePipe: DatePipe,
   ) { }
@@ -73,6 +75,9 @@ export class ArticlesComponent implements OnInit {
       )
       .subscribe();
     });
+  }
+  view(val) {
+    this.router.navigate(['/blog/article/' + val.key]);
   }
   onDelete(article: Article = null) {
     const dialogRef = this.dialogService.open(ConfirmDialogComponent).onClose.subscribe(res => {

@@ -20,6 +20,7 @@
                     <td>{{item.value.timeStamp | date: 'medium'}}</td>
                     <td>
                         <div class="d-flex justify-content-center">
+                            <button nbButton ghost size="small" (click)="view(item)"><nb-icon icon="eye-outline" ></nb-icon></button>
                             <button nbButton ghost size="small" (click)="openDialog(item)"><nb-icon icon="edit-2-outline" ></nb-icon></button>
                             <button nbButton ghost size="small" status="danger" (click)="onDelete(item)"><nb-icon icon="trash-2-outline"></nb-icon></button>
                         </div>
