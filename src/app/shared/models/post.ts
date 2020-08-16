@@ -9,4 +9,3 @@ export class Article {
   key: string;
   value: Post;
 }
-  

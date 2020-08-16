@@ -8,6 +8,7 @@ import { NebularImportsModule } from '../shared/nebular-imports/nebular-imports.
 import { RouterModule } from '@angular/router';
 import { NbLayoutModule, NbSidebarModule, NbButtonModule, NbMenuModule } from '@nebular/theme';
 import { ViewArticleComponent } from './view-article/view-article.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { ViewArticleComponent } from './view-article/view-article.component';
   ],
   imports: [
     NebularImportsModule,
-    
+    NgbModule,
     CommonModule,
     ViewOnlyRoutingModule,
     CommonModule,
