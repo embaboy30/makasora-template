@@ -1,7 +1,13 @@
 .column-container nb-layout-column {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-.content {
-    min-width: 60% !important;
+.ads {
+  max-width: 20% !important;
+}
+
+@media only screen and (max-width: 1300px) {
+  ::ng-deep .layout-container .content .columns {
+    display: block !important;
+  }
 }
