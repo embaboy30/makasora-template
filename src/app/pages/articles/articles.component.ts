@@ -29,6 +29,10 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getArticles();
+    console.log(this.postService.canRead());
+    console.log(this.postService.canEdit());
+    console.log(this.postService.canDelete());
+    
   }
   getArticles(){
     this.postService.getArticleList().subscribe(res => {

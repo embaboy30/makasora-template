@@ -1,1 +1,11 @@
-<p>article-dashboard works!</p>
+<div class="row">
+    <div class="col-md-6 col-lg-4 mt-3" *ngFor="let item of articles">
+        <div class="card m-auto h-100" style="width: 18rem;" (click)="view(item)">
+            <img class="card-img-top"  [src]="item.value.image" height="150" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{item.value.title}}</h5>
+                <p class="card-text">{{item.value.body | slice:0:100}}</p>
+            </div>
+        </div>
+    </div>
+</div>

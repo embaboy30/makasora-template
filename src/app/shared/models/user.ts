@@ -4,4 +4,10 @@ export interface User {
     photoURL?: string;
     displayName?: string;
     myCustomData?: string;
+    roles: Roles;
   }
+  export interface Roles { 
+    subscriber?: boolean;
+    editor?: boolean;
+    admin?: boolean;
+ }
