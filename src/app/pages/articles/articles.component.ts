@@ -1,3 +1,4 @@
+import { AuthService } from './../../shared/services/auth.service';
 import { ConfirmDialogComponent } from './../../shared/dialogs/confirm-dialog/confirm-dialog.component';
 import { Article } from './../../shared/models/post';
 import { PostFormDialogComponent } from './../../shared/dialogs/post-form-dialog/post-form-dialog.component';
@@ -25,6 +26,7 @@ export class ArticlesComponent implements OnInit {
     private router: Router,
     private storage: AngularFireStorage,
     private datePipe: DatePipe,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +34,6 @@ export class ArticlesComponent implements OnInit {
     console.log(this.postService.canRead());
     console.log(this.postService.canEdit());
     console.log(this.postService.canDelete());
-    
   }
   getArticles(){
     this.postService.getArticleList().subscribe(res => {
@@ -51,6 +52,7 @@ export class ArticlesComponent implements OnInit {
             timeStamp: new Date().toString(),
             active: true,
             image: imageUrl,
+            author: this.authService.currentUser.displayName,
           };
           this.postService.createArticle(data);
           this.getArticles();
@@ -61,6 +63,7 @@ export class ArticlesComponent implements OnInit {
           }
           article.value.body = res.body;
           article.value.title = res.title;
+          article.value.author = this.authService.currentUser.displayName;
           article.value.image = res.file ? imageUrl : article.value.image;
           this.postService.updateArticle(article);
         }

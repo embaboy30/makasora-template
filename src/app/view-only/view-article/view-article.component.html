@@ -1,5 +1,48 @@
-<div *ngIf="article">
-    <img [src]="article.value.image" class="image pb-2 d-block mx-auto " alt="">
-    <h3 class="pb-2 text-center" >{{article.value.title}} </h3>
-    <p class="pb-2 text-center" >{{article.value.body}} </p>
+<div class="container" *ngIf="article">
+
+    <div class="row" style="margin-top: 10px;margin-left: 10px;margin-right: 10px;margin-bottom: 10px;text-align: left">
+        <div class="col">
+            <div class="row">
+                <h4 class="font-weight-bold display-4 lead">
+                    {{article.value.title}}
+                </h4>
+            </div>
+            <div class="row">
+                <div class="font-weight-lightdisplay-9 lead">
+                    <p>
+                        <img src="../../../assets/images/person.svg" class="img-fluid" alt="Responsive image">{{article.value.author}}
+                        <img src="../../../assets/images/calendar.svg" class="img-fluid" alt="Responsive image"> {{article.value.timeStamp | date: 'long'}}
+                        00:00:00
+                    </p>
+                    <p>
+                        <img src="../../../assets/images/eye.svg" class="img-fluid" alt="Responsive image">96K |
+                        <img src="../../../assets/images/share-android.svg" class="img-fluid" alt="Responsive image">96K |
+                        <img src="../../../assets/images/thumbsup.svg" class="img-fluid" alt="Responsive image">96K |
+                        <img src="../../../assets/images/thumbsdown.svg" class="img-fluid" alt="Responsive image">96K
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <figure class="figure">
+                    <img [src]="article.value.image" class="img-fluid"
+                        alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-left">
+                        something here
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row"
+            style="margin-top: 10px;margin-left: 10px;margin-right: 10px;margin-bottom: 10px;text-align: justify">
+            <div class="col">
+                <p [innerHTML]="article.value.body"></p>
+            </div>
+        </div>
+
+    </div>
 </div>
