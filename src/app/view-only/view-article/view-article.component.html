@@ -11,8 +11,7 @@
                 <div class="font-weight-lightdisplay-9 lead">
                     <p>
                         <img src="../../../assets/images/person.svg" class="img-fluid" alt="Responsive image">{{article.value.author}}
-                        <img src="../../../assets/images/calendar.svg" class="img-fluid" alt="Responsive image"> {{article.value.timeStamp | date: 'long'}}
-                        00:00:00
+                        <img src="../../../assets/images/calendar.svg" class="img-fluid" alt="Responsive image"> {{article.value.timeStamp | date: 'medium'}}
                     </p>
                     <p>
                         <img src="../../../assets/images/eye.svg" class="img-fluid" alt="Responsive image">96K |
@@ -25,8 +24,8 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col">
+    <div>
+        <div class="row">
             <div class="text-center">
                 <figure class="figure">
                     <img [src]="article.value.image" class="img-fluid"
@@ -43,6 +42,5 @@
                 <p [innerHTML]="article.value.body"></p>
             </div>
         </div>
-
     </div>
 </div>

@@ -1,8 +1,8 @@
 <div class="container" >
   <div class="row">
     <div class="col-sm col-md-12 py-3 hide-mobile">
-      <h2 class="pb-2">Upcoming Events</h2>
-      <ngb-carousel *ngIf="event_list">
+      <h2 class="pb-2 text-center">Upcoming Events</h2>
+      <ngb-carousel class="carousel" *ngIf="event_list">
         <ng-template ngbSlide *ngFor="let event of event_list">
           <img [src]="event.img" alt="Random slide">
           <div class="carousel-caption">
@@ -17,7 +17,7 @@
 
 <div class="row">
   <div class="col-md-6 col-lg-4 mt-3" *ngFor="let item of articles">
-    <div class="card m-auto h-100" style="width: 18rem;" (click)="view(item)">
+    <div class="card m-auto h-100" style="width: 95%;" (click)="view(item)">
       <img class="card-img-top" [src]="item.value.image" height="150" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{item.value.title}}</h5>

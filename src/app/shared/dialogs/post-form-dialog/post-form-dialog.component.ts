@@ -2,6 +2,7 @@ import { PostService } from 'src/app/shared/services/post.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 @Component({
   selector: 'app-post-form-dialog',
   templateUrl: './post-form-dialog.component.html',
@@ -10,6 +11,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class PostFormDialogComponent implements OnInit {
   form: FormGroup;
   file;
+  editor = ClassicEditor;
+  data: any = `<p>Hello, world!</p>`;
   constructor(
     private dialogRef: NbDialogRef<PostFormDialogComponent>,
     private formBuilder: FormBuilder,

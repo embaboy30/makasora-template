@@ -11,3 +11,6 @@
     display: block !important;
   }
 }
+::ng-deep app-article-dashboard {
+  width: -webkit-fill-available;
+}

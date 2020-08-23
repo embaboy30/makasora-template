@@ -9,7 +9,7 @@
                 </div>
               </div>
             <input type="text" class="mb-2" nbInput fullWidth status="basic" formControlName="title" placeholder="Title">
-            <textarea nbInput fullWidth class="mb-2"  status="basic" placeholder="Body" formControlName="body"></textarea>
+            <ckeditor [editor]="editor" formControlName="body"></ckeditor>
         </form>
     </nb-card-body>
     <nb-card-footer class="d-flex justify-content-end">

@@ -18,6 +18,7 @@ import { ConfirmDialogComponent } from './shared/dialogs/confirm-dialog/confirm-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { ThemeModule } from './@theme/theme.module';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { ThemeModule } from './@theme/theme.module';
     ConfirmDialogComponent,
   ],
   imports: [
+    CKEditorModule,
     FormsModule,
     ReactiveFormsModule,
     NebularImportsModule,
